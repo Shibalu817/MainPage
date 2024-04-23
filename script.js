@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     function updateStatus() {
         fetch('/http://172.20.10.9/hello')
             .then(response => response.json())
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const stopButton = document.getElementById('stopButton');
 
                 statusText.textContent = data.status;
-                if (data.status === 'working') {
+                if (data.status === '¹BÂà¤¤') {
                     statusIndicator.className = 'active';
                     startButton.style.display = 'none';
                     stopButton.style.display = 'block';
