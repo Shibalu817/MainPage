@@ -6,20 +6,20 @@
     transition: background-color 0.5s;
 }
 
+    #statusIndicator.active {
+        background-color: red;
+        animation: blink 1s infinite;
+    }
 
-#statusIndicator.active {
-    background-color: red;
-    animation: blink 1s infinite;
-}
-
-#statusIndicator.standby {
-    background-color: green;
-}
+    #statusIndicator.standby {
+        background-color: green;
+    }
 
 @keyframes blink {
     0%, 100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.5;
     }
