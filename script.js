@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     function updateStatus() {
-        fetch('/http://172.20.10.9/hello')
+        fetch('/172.20.10.9/hello')
             .then(response => response.json())
             .then(data => {
                 const statusText = document.getElementById('statusText');
