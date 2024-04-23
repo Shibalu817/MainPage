@@ -1,19 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const dataContainer = document.getElementById('arduinoData');
     function updateStatus() {
-        fetch('/172.20.10.9/hello')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.text();  // ┪ response.json() 狦计沮琌 JSON Α
-            })
+        fetch('/http://172.20.10.9/hello')
+            .then(response => response.json())
             .then(data => {
-                dataContainer.innerText = data; // 穝じ陪ボ计沮
-            })
-            .catch(error => {
-                console.error('Failed to fetch data:', error);
-                dataContainer.innerText = '礚猭更计沮';
+                const statusText = document.getElementById('statusText');
+                const statusIndicator = document.getElementById('statusIndicator');
+                const startButton = document.getElementById('startButton');
+                const stopButton = document.getElementById('stopButton');
+
+                statusText.textContent = data.status;
+                if (data.status === 'working') {
+                    statusIndicator.className = 'active';
+                    startButton.style.display = 'none';
+                    stopButton.style.display = 'block';
+                } else if (data.status === '㏑') {
+                    statusIndicator.className = 'standby';
+                    startButton.style.display = 'block';
+                    stopButton.style.display = 'none';
+                } else {
+                    statusIndicator.style.display = 'none';
+                    startButton.style.display = 'none';
+                    stopButton.style.display = 'none';
+                }
             });
     }
 
