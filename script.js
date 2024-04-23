@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const stopButton = document.getElementById('stopButton');
 
                 statusText.textContent = data.status;
-                if (data.status === '¹BÂà¤¤') {
+                if (data.status === 'working') {
                     statusIndicator.className = 'active';
                     startButton.style.display = 'none';
                     stopButton.style.display = 'block';
