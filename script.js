@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const dataContainer = document.getElementById('arduinoData');
     function updateStatus() {
-        fetch('/http://172.20.10.9/hello')
+        fetch('/172.20.10.9/hello')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
